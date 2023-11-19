@@ -212,3 +212,31 @@ changeCardsText();
 ```
 
 **Modification n°7**
+
+Écris une fonction changeViewButtons() qui va modifier tous les boutons "View" des cards pour les passer en vert. En gros il faut leur mettre la classe btn-success et enlever btn-outline-secondary. Les boutons Edit ne doivent pas changer. Évite bien sûr de faire les 6 modifications une à une ... faut de la boucle là !
+
+```js
+  function changeViewButtons() {
+    // Sélectionner tous les boutons "View"
+    let viewButtons = document.querySelectorAll('.btn-group .btn-outline-secondary:first-child');
+    
+    // Modifier la classe de chaque bouton
+    for(let i = 0; i < viewButtons.length; i++) {
+        // Supprimer la classe 'btn-outline-secondary'
+        viewButtons[i].classList.remove('btn-outline-secondary');
+        // Ajouter la classe 'btn-success'
+        viewButtons[i].classList.add('btn-success');
+    }
+}
+
+// Appeler la fonction
+changeViewButtons();
+```
+
+**Modification n°8**
+
+Allez, on finit sur une modification un peu tordue :
+
+1.Rajoute une <div> portant la classe row juste après celle qui contient déjà les cards actuelle.
+2.Déplace la 3ème card (JS) de la première <div class="row"> vers la deuxième que tu viens de créer.
+Elle est pas belle cette pyramide inversée en front 👳? (comment ça "obsédés par les pyramides" ?).

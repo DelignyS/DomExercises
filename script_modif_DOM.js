@@ -103,3 +103,48 @@ function changeCardsText() {
 changeCardsText();
 
 //__________________________________________________________________________________________________________________//
+
+function changeViewButtons() {
+  // Sélectionner tous les boutons "View"
+  let viewButtons = document.querySelectorAll('.btn-group .btn-outline-secondary:first-child');
+  
+  // Modifier la classe de chaque bouton
+  for(let i = 0; i < viewButtons.length; i++) {
+      // Supprimer la classe 'btn-outline-secondary'
+      viewButtons[i].classList.remove('btn-outline-secondary');
+      // Ajouter la classe 'btn-success'
+      viewButtons[i].classList.add('btn-success');
+  }
+}
+
+// Appeler la fonction
+changeViewButtons();
+
+//__________________________________________________________________________________________________________________//
+
+// Sélectionner le footer
+let footer = document.querySelector('footer');
+
+// Sélectionner le parent du footer
+let parentFooter = footer.parentNode;
+
+// Sélectionner toutes les cartes
+let cards = document.querySelectorAll('.col-md-4');
+
+// Créer une nouvelle div 'album py-5 bg-light'
+let newAlbum = document.createElement('div');
+newAlbum.className = 'album py-5 bg-light';
+
+// Créer une nouvelle div 'container'
+let newContainer = document.createElement('div');
+newContainer.className = 'container2';
+
+// Ajouter la nouvelle div 'container' à la nouvelle div 'album'
+newAlbum.appendChild(newContainer);
+
+// Insérer la nouvelle div 'album' avant le footer
+parentFooter.insertBefore(newAlbum, footer);
+
+// Déplacer la troisième carte vers la nouvelle div 'container'
+newContainer.appendChild(cards[2]);
+
