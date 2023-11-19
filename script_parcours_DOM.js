@@ -16,3 +16,6 @@ console.log(liElements.length);
 let liolElements = document.querySelectorAll('ol > li.compte-moi');
 console.log(liolElements.length);
 
+let hiddenElement = document.querySelector('div ul:nth-of-type(2) li:first-child');
+console.log(hiddenElement.textContent);
+
